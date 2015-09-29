@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">GWTrivia</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="play_button_text">Play</string>
+    <string name="high_score_button_text">High Scores</string>
+    <string name="high_score_placeholder_text">My High Score: 5</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+    <string name="title_activity_game">GameActivity</string>
+</resources>
