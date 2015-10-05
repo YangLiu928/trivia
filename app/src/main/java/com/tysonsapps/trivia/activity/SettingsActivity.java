@@ -1,9 +1,11 @@
-package com.tysonsapps.gwtrivia;
+package com.tysonsapps.trivia.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.tysonsapps.trivia.R;
 
 public class SettingsActivity extends AppCompatActivity {
 

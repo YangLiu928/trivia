@@ -1,4 +1,4 @@
-package com.tysonsapps.gwtrivia;
+package com.tysonsapps.trivia;
 
 import android.content.Context;
 import android.content.res.Configuration;

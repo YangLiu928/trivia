@@ -1,4 +1,4 @@
-package com.tysonsapps.gwtrivia;
+package com.tysonsapps.trivia;
 
 public class Constants {
 	public static final String HIGH_SCORE_PREF_NAME = "highScore";
