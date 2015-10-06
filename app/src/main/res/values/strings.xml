@@ -8,4 +8,5 @@
     <string name="high_score_placeholder_text">My High Score: 5</string>
     <string name="title_activity_settings">SettingsActivity</string>
     <string name="title_activity_game">GameActivity</string>
+    <string name="gamedata_load_error">Problem Getting Game Data</string>
 </resources>

@@ -28,4 +28,6 @@ dependencies {
     compile "commons-io:commons-io:2.4"
     compile 'com.koushikdutta.ion:ion:2.+'
     compile 'com.parse.bolts:bolts-android:1.+'
+//    compile 'org.apache.httpcomponents:httpclient:4.4'
+
 }

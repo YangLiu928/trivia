@@ -5,9 +5,12 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.tysonsapps.trivia.AsyncTask.BingImageSearchAsyncTask;
 import com.tysonsapps.trivia.R;
 
-public class GameActivity extends AppCompatActivity {
+import java.net.URL;
+
+public class GameActivity extends AppCompatActivity implements BingImageSearchAsyncTask.ImageSearchCompletionListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,5 +38,15 @@ public class GameActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void imageUrlFound(URL url) {
+        //TODO
+    }
+
+    @Override
+    public void imageUrlNotFound() {
+        //TODO
     }
 }

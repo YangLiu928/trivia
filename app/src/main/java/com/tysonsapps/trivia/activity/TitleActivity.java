@@ -10,10 +10,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.tysonsapps.trivia.AsyncTask.LoadGameDataAsyncTask;
 import com.tysonsapps.trivia.R;
+import com.tysonsapps.trivia.model.GameData;
 
-public class TitleActivity extends AppCompatActivity {
+public class TitleActivity extends AppCompatActivity implements LoadGameDataAsyncTask.LoadGameDataCompletionListener {
 
     private Button mPlayButton;
     private Button mHighScoresButton;
@@ -31,14 +34,21 @@ public class TitleActivity extends AppCompatActivity {
         mHighScoresButton = (Button) findViewById(R.id.high_scores_button);
         mHighScoreTextView = (TextView) findViewById(R.id.high_score_text);
         mVictorySelfieImageView = (ImageView) findViewById(R.id.victory_selfie);
+        /*
+        * Alternative to ananoyous class, specify onclick in the layout XML
+        * This would avoid the titleactivity.this, and use "this" directly
+        *
+        * */
+
 
         mPlayButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Log.d(TAG,"play button pressed");
+                LoadGameDataAsyncTask task = new LoadGameDataAsyncTask(TitleActivity.this);
+                task.setCompletionListener(TitleActivity.this);
+                task.execute("president.csv");
 
-                Intent intent = new Intent(TitleActivity.this,GameActivity.class);
-                startActivity(intent);
             }
         });
 
@@ -68,5 +78,17 @@ public class TitleActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void gameDataLoaded(GameData gameData) {
+        Intent intent = new Intent(TitleActivity.this,GameActivity.class);
+        intent.putExtra("gameData",gameData);//key value pair
+        startActivity(intent);
+    }
+
+    @Override
+    public void gameDataFailedToLoad() {
+        Toast.makeText(this, R.string.gamedata_load_error, Toast.LENGTH_LONG).show();
     }
 }
